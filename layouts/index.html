@@ -1,0 +1,39 @@
+{{ partial "head.html" }}
+<div class='columns is-centered is-multiline'>
+    {{ range where .Site.RegularPages "Section" "meditation" }}
+    <div class='column is-12'>
+      <div class='meditation-item'>
+        <h2><em><a href=" {{ .Permalink }} ">{{ .Params.title }}</a></em></h2>
+        <p> created by <b>
+                {{if isset .Params "creator"}}
+                {{.Params.creator}}
+                {{else}}
+                anon
+                {{end}}
+              </b>
+            {{ if isset .Params "date" }} <br>uploaded {{ dateFormat "1/03/06" .Params.date }} {{ end }}
+        </p>
+        <audio controls preload="none">
+            <source src=" {{ .Params.audio }} " type='audio/mpeg'>
+        </audio>
+    </div>
+    </div>
+    {{ end }}
+</div>
+<!-- <audio controls>
+    <source src='https://res.cloudinary.com/dnjb78yop/video/upload/v1543365187/duff_hhgduz.mp3' type='audio/mpeg'>
+</audio> -->
+<script>
+    "use strict";
+
+    if (window.netlifyIdentity) {
+        window.netlifyIdentity.on("init", function (user) {
+            if (!user) {
+                window.netlifyIdentity.on("login", function () {
+                    document.location.href = "/admin/";
+                });
+            }
+        });
+    }
+</script>
+{{ partial "footer.html" }}

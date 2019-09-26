@@ -1,0 +1,24 @@
+{{ partial "head.html" . }}
+<div class="wrapper">
+    <h2><em>{{ .Params.title }}</em></h2>
+    <p> created by <b>
+            {{if isset .Params "creator"}}
+            {{.Params.creator}}
+            {{else}}
+            anon
+            {{end}}
+        </b><br>uploaded
+        {{ if isset .Params "date" }} {{ dateFormat "1/03/06" .Params.date }} {{ end }}
+    </p>
+    <audio controls preload="none">
+        <source src=" {{ .Params.audio }} " type='audio/mpeg'>
+    </audio>
+    {{ if isset .Params "description" }}
+    <p>from the creator:</p>
+    <p>
+        {{ .Params.description }}
+    </p>
+    {{ end }}
+</div>
+
+{{ partial "footer.html" . }}

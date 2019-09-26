@@ -1,0 +1,189 @@
+
+
+html, body {
+    background-color: var(--background);
+    margin: 0;
+    height: 100%;
+}
+
+body {
+    
+    color: var(--text1);
+    font-family: Cantarell, Arial, sans-serif;
+    height: 100%;
+}
+a {
+    text-decoration: none;
+    color: var(--text2);
+}
+a:hover {
+    text-decoration: underline;
+}
+
+header {
+    position: sticky;
+    position: -webkit-sticky;
+    top:0;
+    right:0;
+    z-index: 1;
+    text-align: center;
+    width: 100%;
+    font-family: 'Kumar One Outline', cursive;
+}
+
+header h1 {
+    font-size: 1.4em;
+}
+
+@media (min-width: 400px) {
+    header h1 {
+        font-size: 1.7em;
+    }
+}
+
+@media (min-width: 600px) {
+    header h1 {
+        font-size: 2em;
+    }
+}
+
+header p {
+    letter-spacing: 5px;
+}
+
+main {
+    color: var(--text2);
+    max-width: 100%;
+    margin-right: 40px;
+    margin-left: 40px;
+}
+
+.primary-navigation {
+    position: fixed;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    overflow: hidden;
+    padding: 1.5rem 0; 
+    z-index: 2;   
+}
+
+@media (max-width: 880px) {
+    header {
+        position: static;
+    }
+}
+
+.primary-navigation a, .primary-navigation a:link, .primary-navigation a:visited,
+.primary-navigation .item {
+    flex: 0;
+    -webkit-writing-mode: vertical-rl;
+    -ms-writing-mode: tb-rl;
+    writing-mode: vertical-rl;
+    white-space: nowrap;
+    text-shadow: none;
+    background-image: none;
+    padding: 1rem 0;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: var(--text1);
+    background-color: var(--background);
+
+}
+
+.primary-navigation a:visited.-current, .primary-navigation .item.-current {
+    color: initial;
+}
+
+.primary-navigation a.-current:hover, .primary-navigation a:link.-current:hover,
+.primary-navigation a:visited.-current:hover, .primary-navigation .item.-current:hover {
+    cursor: default
+}
+
+.primary-navigation a:hover, .primary-navigation a:link:hover, .primary-navigation a:visited:hover {
+    text-decoration: underline;
+}
+
+div.star {
+    position: absolute;
+    width: var(--starWidth);
+    background-image: url( data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAQAAACR313BAAAAS0lEQVQYGZXBQRGAIABFwVeCJBIG00AbwkgRKfE8c/kz7sLBQmIlsZE4SJwkPiRuTharze50udXX5XR4e1k4uUlcJE4SO4mNxIs/PsnOKsJwHzXnAAAAAElFTkSuQmCC );
+    height: 15px;
+    z-index: 1;
+  }
+
+.meditation-item {
+    border: 6px solid var(--text2);
+    border-radius: 30px;
+    padding: 0px 20px 15px 20px;
+    margin: 10px;
+    background-color: var(--background);
+    overflow: hidden;
+    z-index: 2;
+}
+
+@media (max-width: 450px) {
+    .grid {
+        margin: 0;
+    }
+    main {
+        margin-left: 5px;
+    }
+    #meow {
+        font-size: .5rem;
+    }
+
+    .primary-navigation a {
+        padding: .8rem 0 !important; 
+        font-size: 1rem;
+    }
+}
+
+@media (max-height: 400px) {
+    .primary-navigation a {
+        padding: .5rem 0 !important; 
+        font-size: .8rem;
+    }
+}
+
+audio {
+    width: 100%;
+}
+
+.wrapper {
+    width: 700px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.img-wrapper {
+    max-width: 500px;
+}
+
+#about-image{
+    max-width: 100%;
+}
+
+.elementToFadeInAndOut {
+    -webkit-animation: fadeinout 6s linear;
+    animation: fadeinout 6s linear;
+    opacity: 0;
+    animation-iteration-count: infinite;
+}
+
+@-webkit-keyframes fadeinout {
+  50% { opacity: 1; }
+}
+
+@keyframes fadeinout {
+  50% { opacity: 1; }
+}
+
+textarea {
+    max-width: 100%;
+}
